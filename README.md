@@ -1,4 +1,4 @@
-# LinkednIn_dsjob
+# My plan for this project 
 1. Scrape job postings for Data Scientist role on LinkedIn
 2. Wrangle data into tabular format with html tags removed (except Job Description feature)  
 3. Build ML model to detect which sections in Job Description refer to Responsibilities or Qualifications
@@ -11,3 +11,8 @@
  5. Explore dataset & report insights 
  6. Build real-time visualizations updating job demand for Data Scientists around the world 
  7. Collect more data from other job sites e.g., Glassdoor, Seek 
+
+# Motivation: 
+Get quick updates any job opportunities for Data Scientist
+Know the skillset required from companies and start working on it 
+Have fun with data! 
