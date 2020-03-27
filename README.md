@@ -13,6 +13,6 @@
  7. Collect more data from other job sites e.g., Glassdoor, Seek 
 
 # Motivation: 
-Get quick updates any job opportunities for Data Scientist
-Know the skillset required from companies and start working on it 
-Have fun with data! 
+- Get quick updates any job opportunities for Data Scientist
+- Know the skillset required from companies and start working on it 
+- Have fun with data! 
