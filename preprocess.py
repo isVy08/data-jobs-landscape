@@ -9,19 +9,18 @@ import re
 import pandas as pd 
 import numpy as np
 import pycountry as pcy
-
 import ast
 
 pd.set_option('display.max_columns',100)
 pd.set_option('display.max_rows',500)
 
 
-#1. read dataset
-data = pd.read_csv('datafull.csv')
+#1. READ DATASET
+data = pd.read_csv('~/Documents/GitHub/LinkedIn_dsjob/dsjob_final.csv')
 
 
-#2.Remove records where description = 0 & set other '0' as null values  
-data = data[data.description!='0'].reset_index()
+#2.UNUSUAL VALUES: Remove records where description = 0 & set other '0' as null values  
+data = data[data.description!='0'].reset_index(drop=True)
 
 for col in ['exp_level','job_func','industry','job_type']: 
     data[col] = data[col].map(lambda x: np.nan if x=='0' else x)
@@ -70,14 +69,16 @@ loc = loc.map(lambda x: x[-1])
 data['Area'] = loc.apply(to_area)
 
 
-#4. EXP LEVEL/ JOB FUNC / INDUSTRY / JOB TYPE
+#4. TRANSLATE TEXT ATTRIBUTE: JOB FUNC / INDUSTRY / EXP LEVEL / JOB TYPE / JOB DESCRIPTION / TITLE
 
-#convert to List & get unique values for JOB FUNC / INDUSTRY 
+#Transform JOB FUNC / INDUSTRY into simple attribute of unique values
+
 
 data['job_func'] = data['job_func'].map(lambda x: ast.literal_eval(x) if x is not np.nan else x)
 data['industry'] = data['industry'].map(lambda x: ast.literal_eval(x) if x is not np.nan else x)
 
 fucins = {}
+
 for i in range(nrow):
     try:
         country = data['Country'][i]
@@ -91,17 +92,28 @@ for i in range(nrow):
     except: 
         pass            
 
-# extract file to be translated 
 
+# extract file to be translated 
+        
 foreign = ['China','Japan','France','Germany','Italy','Netherlands','Spain','Sweden','Switzerland']
+
 for country in foreign: 
-    df = data[data.Country == country]
-    text = []
-    for raw in [df['exp_level'].unique(),df['job_type'].unique(),fucins[country]]:
-        text.extend(raw)
-    filename = country+'.xlsx'
-    get_file(text,filename,country)            
+    subset = data[data['Country']==country]
+    attrs = ['description','title','job_type','exp_level','fucins']
+    df = pd.DataFrame()
+    for a in attrs: 
+        if a == 'description': 
+            df = pd.concat([df,subset[a].reset_index(drop=True)],axis=1,ignore_index=True)
+        elif a == 'fucins':
+            df = pd.concat([df,pd.Series(fucins[country])],axis=1,ignore_index=True)
+        else: 
+            df = pd.concat([df,pd.Series(subset[a].unique())],axis=1,ignore_index=True) 
+    df.columns = attrs 
+    filename = '~/raw text/'+country+'.xlsx'
+    get_file(df,filename)            
     
+
+   
 
 # get translated results 
 
@@ -136,5 +148,5 @@ for col in ['exp_level','job_type','job_func','industry']:
     else: 
         data[new] = data[col].map(lambda x: [translate(i) for i in x] if isinstance(x,list) else x)
          
-test = data.dropna()
-idx = test[test.non_English==1].index
+data.description[2]
+
