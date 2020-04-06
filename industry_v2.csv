@@ -1,0 +1,372 @@
+original,industry,true_industry
+government administration,['government administration'],0
+marketing and advertising,['marketing and advertising'],0
+automotive,['automotive'],0
+internet,['internet'],0
+oil   energy,['oil   energy'],0
+financial services,['financial services'],0
+restaurants,['restaurants'],0
+business supplies and equipment,['business supplies and equipment'],0
+mining   metals,['mining   metals'],0
+information technology and services,['information technology and services'],0
+computer   network security,['computer   network security'],0
+computer networking,['computer networking'],0
+computer software,['computer software'],0
+biotechnology,['biotechnology'],0
+nonprofit organization management,['non profit organization management'],0
+computer games,['computer games'],0
+construction,['construction'],0
+staffing and recruiting,['staffing and recruiting'],0
+management consulting,['management consulting'],0
+utilities,['utilities'],0
+hospital   health care,['hospital   health care'],0
+information services,['information services'],0
+consumer goods,['consumer goods'],0
+food   beverages,['food   beverages'],0
+food production,['food production'],0
+retail,['retail'],0
+furniture,['furniture'],0
+banking,"['banking', 'investment banking']",0
+telecommunications,['telecommunications'],0
+renewables   environment,['renewables   environment'],0
+human resources,['human resources'],0
+medical devices,['medical devices'],0
+insurance,['insurance'],0
+higher education,['higher education'],0
+design,"['design', 'graphic design']",0
+information service,"['information services', 'information technology and services']",0
+food and drinks,"['food   beverages', 'food production']",0
+online education,"['education management', 'higher education', 'online media', 'primary secondary education']",0
+physical education,"['education management', 'higher education', 'primary secondary education']",0
+investment bank,"['investment banking', 'investment management']",0
+education system,"['education management', 'higher education', 'primary secondary education']",0
+network equipment,"['business supplies and equipment', 'computer   network security']",0
+industrial equipment,"['business supplies and equipment', 'industrial automation', 'mechanical or industrial engineering']",0
+food and drink,"['food   beverages', 'food production']",0
+public service,"['public policy', 'public relations and communications', 'public safety']",0
+intl  trade   development,"['international trade and development', 'program development']",0
+public administration,"['government administration', 'public policy', 'public relations and communications', 'public safety']",0
+radio and television media,"['broadcast media', 'media production', 'online media']",0
+electronic games,"['computer games', 'electrical electronic manufacturing']",0
+public policies,"['public policy', 'public relations and communications', 'public safety']",0
+hospitals and care centers,"['hospital   health care', 'mental health care']",0
+construction materials,"['building materials', 'construction']",0
+machinery and equipment,"['business supplies and equipment', 'machinery']",0
+financial administration,"['financial services', 'government administration']",0
+marketing research,"['market research', 'marketing and advertising', 'research']",0
+central government,"['government administration', 'government relations']",0
+banking sector,"['banking', 'investment banking']",0
+hardware products,"['computer hardware', 'paper   forest products']",0
+computer equipment,"['business supplies and equipment', 'computer   network security', 'computer games', 'computer hardware', 'computer networking', 'computer software']",0
+road   rail transport,"['package freight delivery', 'transportation trucking railroad']",0
+high school education,"['education management', 'higher education', 'primary secondary education']",0
+medical instruments,"['medical devices', 'medical practice']",0
+research,"['market research', 'research']",1
+real estate,"['commercial real estate', 'real estate']",1
+transportation   freight   railway,"['package freight delivery', 'transportation trucking railroad']",1
+medical equipment,"['business supplies and equipment', 'medical devices', 'medical practice']",1
+academic research,"['market research', 'research']",1
+building construction,"['building materials', 'construction']",1
+investment trust investment advisor,"['investment banking', 'investment management']",1
+research and development,"['international trade and development', 'market research', 'program development', 'research']",1
+medical technology,"['information technology and services', 'medical devices', 'medical practice']",1
+retail trade,"['international trade and development', 'retail']",1
+wealth management,"['education management', 'investment management', 'management consulting', 'non profit organization management']",1
+public relation,"['public policy', 'public relations and communications', 'public safety']",1
+retail business,"['business supplies and equipment', 'retail']",1
+studies   research,"['market research', 'research']",1
+food industry,"['food   beverages', 'food production']",1
+portfolio management,"['education management', 'investment management', 'management consulting', 'non profit organization management']",1
+research and science,"['market research', 'research']",1
+security and criminal investigation,"['computer   network security', 'security and investigations']",1
+asset management,"['education management', 'investment management', 'management consulting', 'non profit organization management']",1
+consumer items,"['consumer electronics', 'consumer goods', 'consumer services']",1
+electronics  manufacturing ,"['consumer electronics', 'electrical electronic manufacturing']",1
+security and investigation,"['computer   network security', 'security and investigations']",1
+programming development,"['international trade and development', 'program development']",1
+aeronautics   aviation,"['airlines aviation', 'aviation   aerospace']",1
+renewable energy and the environment,"['oil   energy', 'renewables   environment']",1
+veterinary medicine,"['alternative medicine', 'veterinary']",1
+social facilities,"['civic   social organization', 'facilities services', 'recreational facilities and services']",1
+renewable energy and environment,"['oil   energy', 'renewables   environment']",1
+industrial machinery,"['industrial automation', 'machinery', 'mechanical or industrial engineering']",1
+hospital facilities and healthcare,"['facilities services', 'hospital   health care', 'recreational facilities and services']",1
+civil security,"['civil engineering', 'computer   network security', 'security and investigations']",2
+web media,"['broadcast media', 'media production', 'online media']",2
+event services,"['consumer services', 'environmental services', 'events services', 'facilities services', 'financial services', 'individual   family services', 'information services', 'information technology and services', 'legal services', 'recreational facilities and services']",2
+management of nonprofit organizations,"['education management', 'investment management', 'management consulting', 'non profit organization management']",3
+computer networks,"['computer   network security', 'computer games', 'computer hardware', 'computer networking', 'computer software']",3
+management of associations and foundations,"['education management', 'investment management', 'management consulting', 'non profit organization management']",3
+infrastructure services,"['consumer services', 'environmental services', 'events services', 'facilities services', 'financial services', 'individual   family services', 'information services', 'information technology and services', 'legal services', 'recreational facilities and services']",3
+investment services,"['consumer services', 'environmental services', 'events services', 'facilities services', 'financial services', 'individual   family services', 'information services', 'information technology and services', 'investment banking', 'investment management', 'legal services', 'recreational facilities and services']",4
+training management,"['education management', 'investment management', 'management consulting', 'non profit organization management', 'professional training   coaching']",4
+it and services,"['consumer services', 'environmental services', 'events services', 'facilities services', 'financial services', 'individual   family services', 'information services', 'information technology and services', 'legal services', 'recreational facilities and services']",7
+juridical services,"['consumer services', 'environmental services', 'events services', 'facilities services', 'financial services', 'individual   family services', 'information services', 'information technology and services', 'legal services', 'recreational facilities and services']",8
+hotel and restaurant services,"['consumer services', 'environmental services', 'events services', 'facilities services', 'financial services', 'individual   family services', 'information services', 'information technology and services', 'legal services', 'recreational facilities and services']",9
+public services,"['consumer services', 'environmental services', 'events services', 'facilities services', 'financial services', 'individual   family services', 'information services', 'information technology and services', 'legal services', 'public policy', 'public relations and communications', 'public safety', 'recreational facilities and services']",11
+leisure  travel   tourism,['leisure  travel   tourism'],0
+hospitality,['hospitality'],0
+government relations,['government relations'],0
+public policy,['public policy'],0
+accounting,[],0
+entertainment,['entertainment'],0
+investment banking,['investment banking'],0
+education management,['education management'],0
+environmental services,['environmental services'],0
+mechanical or industrial engineering,['mechanical or industrial engineering'],0
+online media,['online media'],0
+defense   space,['defense   space'],0
+health  wellness and fitness,['health  wellness and fitness'],0
+gambling   casinos,['gambling   casinos'],0
+wholesale,['wholesale'],0
+consumer services,['consumer services'],0
+pharmaceuticals,['pharmaceuticals'],0
+civil engineering,['civil engineering'],0
+apparel   fashion,['apparel   fashion'],0
+market research,['market research'],0
+logistics and supply chain,['logistics and supply chain'],0
+transportation trucking railroad,['transportation trucking railroad'],0
+media production,['media production'],0
+libraries,['libraries'],0
+architecture   planning,['architecture   planning'],0
+events services,['events services'],0
+facilities services,['facilities services'],0
+civic   social organization,['civic   social organization'],0
+public relations and communications,['public relations and communications'],0
+public safety,['public safety'],0
+electrical electronic manufacturing,['electrical electronic manufacturing'],0
+legal services,['legal services'],0
+aviation   aerospace,['aviation   aerospace'],0
+airlines aviation,['airlines aviation'],0
+building materials,['building materials'],0
+investment management,['investment management'],0
+translation and localization,['translation and localization'],0
+animation,['animation'],0
+law practice,['law practice'],0
+computer hardware,['computer hardware'],0
+capital markets,['capital markets'],0
+broadcast media,['broadcast media'],0
+publishing,['publishing'],0
+individual   family services,['individual   family services'],0
+consumer electronics,['consumer electronics'],0
+venture capital   private equity,['venture capital   private equity'],0
+outsourcing offshoring,['outsourcing offshoring'],0
+farming,['farming'],0
+chemicals,['chemicals'],0
+mental health care,['mental health care'],0
+medical practice,['medical practice'],0
+warehousing,['warehousing'],0
+machinery,['machinery'],0
+supermarkets,['supermarkets'],0
+wireless,['wireless'],0
+security and investigations,['security and investigations'],0
+primary secondary education,['primary secondary education'],0
+nanotechnology,['nanotechnology'],0
+semiconductors,['semiconductors'],0
+sporting goods,['sporting goods'],0
+tobacco,['tobacco'],0
+international trade and development,['international trade and development'],0
+cosmetics,['cosmetics'],0
+veterinary,['veterinary'],0
+fine art,['fine art'],0
+maritime,['maritime'],0
+program development,['program development'],0
+industrial automation,['industrial automation'],0
+e learning,['e learning'],0
+    ,[],0
+clothing and fashion,['apparel   fashion'],0
+capital markets   securities,['capital markets'],0
+pharmaceutical,[],0
+daily necessities,[],0
+service industry,[],0
+commercial estate,['commercial real estate'],0
+car,[],0
+logistics and supply chain management,['logistics and supply chain'],0
+automated industry,[],0
+the internet,['internet'],0
+bank,[],0
+computer and network security,['computer   network security'],0
+legal service,['legal services'],0
+sightseeing,[],0
+health care,['hospital   health care'],0
+electrical   electronic manufacturing,['electrical electronic manufacturing'],0
+mechanical engineering   industrial engineering,['mechanical or industrial engineering'],0
+luxury goods and jewelry,['luxury goods   jewelry'],0
+recruitment,[],0
+cosmetic,[],0
+consumer electronics products,['consumer electronics'],0
+agriculture,[],0
+semiconductor,[],0
+venture capital and private equity,['venture capital   private equity'],0
+mental health,['mental health care'],0
+mechanical,['mechanical or industrial engineering'],0
+oil and energy,['oil   energy'],0
+computer network,['computer   network security'],0
+outsourcing   offshore outsourcing,['outsourcing offshoring'],0
+think tank,['think tanks'],0
+pr communication,[],0
+environmental service,['environmental services'],0
+professional training and guidance,['professional training   coaching'],0
+military,['military'],0
+professional training   coaching,['professional training   coaching'],0
+commercial real estate,['commercial real estate'],0
+sports,['sports'],0
+writing and editing,['writing and editing'],0
+      ,[],0
+software,['computer software'],0
+it and information services,['information services'],0
+veterinarian,[],0
+warehouse,[],0
+consulting,['management consulting'],0
+accounting and tax,[],0
+electricity and gas,[],0
+electrical and electronic products,['electrical electronic manufacturing'],0
+non profit organization,['non profit organization management'],0
+aerospace,['aviation   aerospace'],0
+mental care,['mental health care'],0
+mechanical and industrial engineering,['mechanical or industrial engineering'],0
+general electric appliances,[],0
+electrical   electronics manufacturing,['electrical electronic manufacturing'],0
+personnel advice   placement,[],0
+marketing and advertisement,['marketing and advertising'],0
+construction industry,['construction'],0
+automobile,[],0
+think tanks,['think tanks'],0
+pharmacy,[],0
+chemistry,[],0
+human resource,['human resources'],0
+transport   rail traffic,[],0
+tourism and leisure,['leisure  travel   tourism'],0
+mechanical engineering,['mechanical or industrial engineering'],0
+airlines,['airlines aviation'],0
+defense   space travel,['defense   space'],0
+radio and television,[],0
+health  wellness   fitness,['health  wellness and fitness'],0
+petroleum   energy industry,['oil   energy'],0
+clothing   fashion,['apparel   fashion'],0
+plastics,['plastics'],0
+logistics and procurement,['logistics and supply chain'],0
+power supply,['logistics and supply chain'],0
+psychology   psychotherapy,[],0
+luxury goods   jewelry,['luxury goods   jewelry'],0
+seafaring,[],0
+legal system,['legal services'],0
+architecture   construction planning,['architecture   planning'],0
+written press,[],0
+textile industry,[],0
+human ressources,['human resources'],0
+leisure  travel and tourism,['leisure  travel   tourism'],0
+banks,[],0
+aeronautics and aerospace,['aviation   aerospace'],0
+collective catering,[],0
+pharmaceutical industry,[],0
+it and network security,['computer   network security'],0
+road and rail transport,[],0
+automobile industry,[],0
+hardware,['computer hardware'],0
+health  fitness and well being,['health  wellness and fitness'],0
+marketing studies,['marketing and advertising'],0
+public relations and communication,['public relations and communications'],0
+electrical   electronic components industry,['electrical electronic manufacturing'],0
+large distribution,[],0
+railway equipment,['business supplies and equipment'],0
+mines and metals,['mining   metals'],0
+editing,['writing and editing'],0
+environment and renewable energies,['renewables   environment'],0
+music,['music'],0
+gambling and casinos,['gambling   casinos'],0
+primary   secondary education,['primary secondary education'],0
+defense and space,['defense   space'],0
+medico psychological sector,[],0
+distance learning,['e learning'],0
+school and university administration,['government administration'],0
+raw materials,['building materials'],0
+architecture and urbanism,['architecture   planning'],0
+lawyers,[],0
+car industry,[],0
+healthcare,[],0
+mining and metals,['mining   metals'],0
+sustainability and environment,['renewables   environment'],0
+aviation and airlines,['airlines aviation'],0
+staff and recruiting,['staffing and recruiting'],0
+insurances,[],0
+building material,['building materials'],0
+build,[],0
+telecommunication,[],0
+luxury items and jewelery,['luxury goods   jewelry'],0
+production of electrical   electronic goods,['electrical electronic manufacturing'],0
+customer service,[],0
+recreational facilities and services,['recreational facilities and services'],0
+law enforcement,['law enforcement'],0
+machines,[],0
+aviation and aerospace,['aviation   aerospace'],0
+hospitality and tourism,"['hospitality', 'leisure  travel   tourism']",0
+vehicle,[],0
+logistics,['logistics and supply chain'],0
+transport  truck and rail ,[],0
+it,[],0
+fashion,['apparel   fashion'],0
+packaging and containers,['packaging and containers'],0
+paper and forest products,['paper   forest products'],0
+mining and metal,['mining   metals'],0
+recycling and environment,['renewables   environment'],0
+staff and recruitment,[],0
+newspapers,['newspapers'],0
+business consultancy,['business supplies and equipment'],0
+pharmacology,[],0
+hospital and health care,['hospital   health care'],0
+library,[],0
+leisure and tourism,['leisure  travel   tourism'],0
+further training,['professional training   coaching'],0
+mechanical and industrial technology,['mechanical or industrial engineering'],0
+architecture and planning,['architecture   planning'],0
+accommodation,[],0
+games and casino,['computer games'],0
+ideal organization management,['non profit organization management'],0
+alimentation and drinks,[],0
+video game,[],0
+marketing and publicity,['marketing and advertising'],0
+services for the individual and the family,['individual   family services'],0
+aerospace and aviation industry,['aviation   aerospace'],0
+strategy and operations consulting,['management consulting'],0
+staffing and selection,['staffing and recruiting'],0
+outsourcing   offshoring,['outsourcing offshoring'],0
+automotive sector,['automotive'],0
+network interconnection,['computer   network security'],0
+road or rail transport,[],0
+railway manufacturing,['electrical electronic manufacturing'],0
+higher level education,['higher education'],0
+chemical products,['paper   forest products'],0
+civic and social organization,['civic   social organization'],0
+hostelry,[],0
+investigation,[],0
+textile and fashion industry,['apparel   fashion'],0
+law,"['law enforcement', 'law practice']",0
+building,['building materials'],0
+non profit organization management,['non profit organization management'],0
+storage,[],0
+civil protection,['civil engineering'],0
+luxury items and jewelry,['luxury goods   jewelry'],0
+diplomatic service,[],0
+renewable energy   environment,"['oil   energy', 'renewables   environment']",0
+beni primari,[],0
+pubbliche relazioni e comunicazioni,['e learning'],0
+managerial consultancy,[],0
+accessories and fashion,['apparel   fashion'],0
+selection and search for personnel,[],0
+electrical and electronic production,['electrical electronic manufacturing'],0
+cyber   and network security,['computer   network security'],0
+ferroviario,[],0
+large retailers,[],0
+executive office,['executive office'],0
+video games,['computer games'],0
+services for the person and the family,['individual   family services'],0
+meal,[],0
+editing and revision,['writing and editing'],0
+primary and secondary education,['primary secondary education'],0
+motion pictures and film,['motion pictures and film'],0
+religious institutions,['religious institutions'],0
+railroad manufacture,['railroad manufacture'],0
+fund raising,['fund raising'],0
+philanthropy,['philanthropy'],0
+dairy,['dairy'],0
