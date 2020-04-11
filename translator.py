@@ -147,5 +147,5 @@ for a in ['description','title','exp_level','job_type','job_func','industry']:
     else: 
         data[name] = data[a].map(lambda x: [translate(i) for i in x] if isinstance(x,list) else x)
         
-newdata = data[['id','link','company','list_time','country','area','description_v2','exp_level_v2','job_type_v2','industry_v2','job_func_v2']]
+newdata = data[['id','link','company','list_time','title','country','area','description_v2','exp_level_v2','job_type_v2','industry_v2','job_func_v2']]
 newdata.to_csv('~/Documents/GitHub/LinkedIn_dsjob/dsjob_trans.csv',index=False)
