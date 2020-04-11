@@ -1,12 +1,25 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Apr  1 21:21:32 2020
+import re
+import unicodedata
+import nltk
+from nltk.tokenize.toktok import ToktokTokenizer
+import nltk
+from nltk.tokenize.toktok import ToktokTokenizer
 
-@author: vyvo
-"""
+
+#import spacy
 
 
+#nlp = spacy.load('en_core', parse=True, tag=True, entity=True)
+#nlp_vec = spacy.load('en_vecs', parse = True, tag=True, #entity=True)
+
+#stopword_list.remove('no')
+#stopword_list.remove('not')
+
+
+
+tokenizer = ToktokTokenizer()
+nltk.download('stopwords')
+stopword_list = nltk.corpus.stopwords.words('english')
 
 #Remove accented characters 
 def remove_accented_chars(text):

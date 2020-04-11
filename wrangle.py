@@ -7,9 +7,11 @@ Created on Sat Apr  4 21:34:54 2020
 """
 
 from dependency import *
+from cleantext import *
 
 #read translated data - remember to change directory 
-data = pd.read_csv('dsjob_trans.csv',converters={'industry_v2': ast.literal_eval,'job_func_v2': ast.literal_eval})
+data = pd.read_csv('dsjob_trans.csv')
+data['industry_v2'] = data['industry_v2'].map(lambda x: ast.literal_eval(x) if x is not np.nan else x)
 
 #Standardize values for EXP LEVEL / JOB TYPE 
 

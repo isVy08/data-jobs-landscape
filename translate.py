@@ -12,7 +12,7 @@ pd.set_option('display.max_rows',500)
 
 
 #1. READ DATASET
-data = pd.read_csv('~/Documents/GitHub/LinkedIn_dsjob/dsjob_final.csv',converters={'industry_v2': ast.literal_eval,'job_func_v2': ast.literal_eval})
+data = pd.read_csv('dsjob_final.csv',converters={'industry_v2': ast.literal_eval,'job_func_v2': ast.literal_eval})
 
 #----------------------------------------------------------------------
 
@@ -115,7 +115,7 @@ foreign = ['China','Japan','France','Germany','Italy','Netherlands','Spain','Swe
 #5. GET TRANSLATED RESULT
 
 #load file
-trans = pd.read_excel('~/Documents/GitHub/LinkedIn_dsjob/translated.xlsx',index_col=0)
+trans = pd.read_excel('translated.xlsx',index_col=0)
 
 #create dictionary for Title / Job type / Exp level / Job func / Industry
 dictionary = {}
@@ -139,7 +139,7 @@ def translate(x):
 for a in ['description','title','exp_level','job_type','job_func','industry']:
     name = a+'_v2'
     if a == 'description': 
-        data[name] = data['country']
+        data[name] = data['description']
         for country in foreign: 
             data.loc[data['country']==country,name] = list(trans.loc[country,'description'])
     elif a in ['title','job_type','exp_level']:
