@@ -6,6 +6,7 @@ Created on Wed Apr  1 14:50:04 2020
 @author: vyvo
 """
 from dependency import * 
+from cleantext import * 
 
 pd.set_option('display.max_columns',100)
 pd.set_option('display.max_rows',500)
@@ -147,5 +148,5 @@ for a in ['description','title','exp_level','job_type','job_func','industry']:
     else: 
         data[name] = data[a].map(lambda x: [translate(i) for i in x] if isinstance(x,list) else x)
         
-newdata = data[['id','link','company','list_time','title','country','area','description_v2','exp_level_v2','job_type_v2','industry_v2','job_func_v2']]
+newdata = data[['id','link','company','list_time','title_v2','country','area','description_v2','exp_level_v2','job_type_v2','industry_v2','job_func_v2']]
 newdata.to_csv('~/Documents/GitHub/LinkedIn_dsjob/dsjob_trans.csv',index=False)

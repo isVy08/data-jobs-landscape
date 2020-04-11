@@ -95,6 +95,5 @@ for row in range(data.shape[0]):
 data['job_description'] = jdesc 
 data['job_requirement'] = jreq
 
-#data.to_csv('datafull.csv',index=False)
+data.drop(columns=['description_v2','main_description','label']).to_csv('datafull.csv',index=False)
 
-#pd.DataFrame(data[['title'].sample(50)).to_csv('jrtest.csv',index=False)
