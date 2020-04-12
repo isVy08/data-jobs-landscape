@@ -1,27 +1,10 @@
-import re
-import unicodedata
-import nltk
-from nltk.tokenize.toktok import ToktokTokenizer
-import nltk
-from nltk.tokenize.toktok import ToktokTokenizer
-
-
-#import spacy
-
-
-#nlp = spacy.load('en_core', parse=True, tag=True, entity=True)
-#nlp_vec = spacy.load('en_vecs', parse = True, tag=True, #entity=True)
-
-#stopword_list.remove('no')
-#stopword_list.remove('not')
-
-
-
+from dependency import * 
 tokenizer = ToktokTokenizer()
-nltk.download('stopwords')
-stopword_list = nltk.corpus.stopwords.words('english')
 
-#Remove accented characters 
+
+
+
+
 def remove_accented_chars(text):
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8', 'ignore')
     return text
@@ -31,6 +14,10 @@ def remove_special_characters(text, remove_digits=False):
     text = re.sub(pattern, ' ', text)
     return text
 
+
+
+nltk.download('stopwords')
+stopword_list = nltk.corpus.stopwords.words('english')
 def remove_stopwords(text, is_lower_case=False,return_str=True):
     tokens = tokenizer.tokenize(text)
     tokens = [token.strip() for token in tokens]
@@ -49,6 +36,18 @@ def remove_html(text):
     parse = BeautifulSoup(text,'lxml')
     return parse.get_text()
 
+
+nltk.download('wordnet')
+def lemmatize_text(text): 
+    w = WordNetLemmatizer()
+    tokens = tokenizer.tokenize(text)
+    tokens = [token.strip() for token in tokens] #remove space
+    filtered_tokens = [w.lemmatize(token) for token in tokens ]
+    filtered_text = ' '.join(filtered_tokens)
+    return filtered_text 
+    
+
+
 #Translate to English using Google API (but with Limit!)   
 def to_eng(x):
     trans = Translator()
@@ -57,8 +56,4 @@ def to_eng(x):
     except:
         return(np.nan)
     
-#extract excel file of text to be translated 
-
-def get_file(df,filename): #text is a DataFrame of columns = attributes to be translated
-    df.to_excel(filename,index=False)
 
