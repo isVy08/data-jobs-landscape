@@ -34,7 +34,7 @@ def remove_stopwords(text, is_lower_case=False,return_str=True):
 
 def remove_html(text):
     parse = BeautifulSoup(text,'lxml')
-    return parse.get_text()
+    return parse.get_text().lower()
 
 
 nltk.download('wordnet')

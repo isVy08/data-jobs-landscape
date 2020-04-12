@@ -13,8 +13,52 @@ from dependency import *
 from cleantext import * 
 
 data = pd.read_csv("datafull.csv")
+
 # Replace null value with Not Applicable 
 data.fillna('Not Applicable',inplace=True)
+
+# Delete duplicated entries with dulicated company & description 
+
+idx = data[data.duplicated(subset=['company','description_v2'])].index #in case of no dups, index is null 
+data = data.drop(idx,axis=0).reset_index()
+
+# Convert to Raw text 
+data['raw_desc'] = data['description_v2'].apply(remove_html)
+
+# Get Years of Experience 
+    # Remove relatives of Year 
+p = re.compile('years old|yearly|year-round')
+data['exp_year'] = data['raw_desc'].str.replace(p,'')
+data['exp_year'] = data['raw_desc'].str.extract(r'(\d+\s*-\s*\d+|\d+\+?)(?= year)')
+
+def check_invalid(x):
+    try: 
+        if '-' in x:
+            low = re.match(r'(\d+)(?=\s?-)',x).group()
+            upper = re.search(r'(\d+)',x.replace(low,'')).group()
+        else: 
+            upper = "0"
+            low = re.search(r'(\d+)',x).group()
+        
+        if int(low) >  15 or int(upper) > 15:
+            return np.nan 
+        else: 
+            return x 
+    except: 
+        if x is None:
+            return np.nan
+        else: 
+            return x
+    
+        
+data['exp_year'] = data['exp_year'].apply(check_invalid)        
+        
+s = data['exp_year'].apply(check_invalid)       
+s.unique()
+data[data['exp_year']=='20161-2']['raw_desc']
+
+
+data.raw_desc[9610]
 
 
 # Categorize title 
@@ -45,14 +89,25 @@ def to_title(x):
         
 data['title_v3'] = data['title_v2'].apply(to_title) 
 
-f#or var in ['title_v3','country','exp_level_v2','job_type_v2']:
-  #  print(data[data['title_v3']=='Data Scientist'][var].value_counts())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Clean text 
 
-def clean_text(text,html=False): 
-    if html: 
-        text = remove_html(text)
+def clean_text(text): 
     text = remove_accented_chars(text)
     text = remove_special_characters(text)
     text = remove_stopwords(text)
@@ -70,11 +125,11 @@ def collect_text(data,attr,by,value):
 # Create non-null datasets 
 df1 = data[data['job_description']!='0'][['title_v3','country','exp_level_v2','job_type_v2','job_description']]
 df2 = data[data['job_requirement']!='0'][['title_v3','country','exp_level_v2','job_type_v2','job_requirement']]
-df3 = data[(data['job_requirement']=='0')&(data['job_description']=='0')][['title_v3','country','exp_level_v2','job_type_v2','description_v2']]
+df3 = data[(data['job_requirement']=='0')&(data['job_description']=='0')][['title_v3','country','exp_level_v2','job_type_v2','raw_desc']]
 
 df1['job_description'] = df1['job_description'].apply(clean_text) 
 df2['job_requirement'] = df2['job_requirement'].apply(clean_text) 
-df3['general'] = df3['description_v2'].map(lambda x: clean_text(x,html=True)) 
+df3['general'] = df3['description_v2'].apply(clean_text)  
 
 # Create an empty excel sheet first 
 for sheet in ('title_v3','country','exp_level_v2','job_type_v2'):
@@ -87,3 +142,30 @@ for sheet in ('title_v3','country','exp_level_v2','job_type_v2'):
         finaldf = pd.DataFrame(d).T.rename(columns={0:'decription',1:'requirement',2:'general'})
     with pd.ExcelWriter('desc_text.xlsx',mode='a') as writer:
         finaldf.to_excel(writer,sheet_name=sheet)
+
+
+# Word count 
+
+data = pd.read_excel('desc_text.xlsx',sheet_name = 0,index_col=0)
+
+
+data.loc['Data Scientist']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
