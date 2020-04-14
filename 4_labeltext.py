@@ -24,7 +24,7 @@ def group_text(html_text): #must be html text
          if '<strong>' in str(val):
              split_index.append(i)
     if len(split_index) < 5: 
-        return (parse.get_text().lower()) #if the description not structured by bold titles, get the whole text 
+        return html_text #if the description not structured by bold titles, get the whole text 
             
     else: 
         result = [extr[k : j] for k, j in zip([0] + split_index, split_index + [None])] #split & group elements under same bold titles 

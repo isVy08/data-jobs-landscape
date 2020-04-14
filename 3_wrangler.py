@@ -10,7 +10,7 @@ from dependency import *
 from cleantext import *
 
 #read translated data - remember to change directory 
-data = pd.read_csv('dsjob_trans.csv')
+data = pd.read_csv('/Users/vyvo/Documents/GitHub/LinkedIn_dsjob/data/dsjob_trans.csv')
 data['industry_v2'] = data['industry_v2'].map(lambda x: ast.literal_eval(x) if x is not np.nan else x)
 
 #Standardize values for EXP LEVEL / JOB TYPE 
@@ -57,7 +57,7 @@ original = list(data['industry_v2'].dropna())
 original = pd.Series(chain(*original)).unique()
 
 #industry
-ind = pd.read_csv('industry.csv')
+ind = pd.read_csv('/Users/vyvo/Documents/GitHub/LinkedIn_dsjob/data/industry.csv')
 ind['Industry_clean'] = ind['Industry'].apply(remove_special_characters).str.lower()
 check_list = ind['Industry_clean'].map(lambda x: remove_stopwords(x,return_str=False)) #list-like 
 
@@ -98,7 +98,7 @@ check_list = ind['Industry_clean'].map(lambda x: remove_stopwords(x,return_str=F
 # =============================================================================
 
 
-result = pd.read_csv('industry_v2.csv',converters={"industry": ast.literal_eval})
+result = pd.read_csv('/Users/vyvo/Documents/GitHub/LinkedIn_dsjob/data/industry_v2.csv',converters={"industry": ast.literal_eval})
 
 final = []
 for row in range(result.shape[0]):
@@ -118,6 +118,37 @@ result['key_industry'].fillna('Others',inplace=True)
 industry_map = pd.Series(result.set_index('original')['key_industry']).to_dict()
 
 data['industry_v2'] = data['industry_v2'].map(lambda x: x if x is np.nan else list(map(lambda i: industry_map[i],x)))
+
+
+# Replace null value with Not Applicable 
+data.fillna('Not Applicable',inplace=True)
+
+
+# Categorize title 
+
+def to_title(x):
+   global title 
+   title = {
+    "Machine Learning Engineer" : 'machine learning|nlp|natural language processing|recognition|image|computer vision',
+    "Software Engineer" : r'(?=.*\bsoftware\b)(?=.*\bsengineer\b).*',    
+    "Data Engineer" : r'(?=.*\bdata|\b)(?=.*\bengineer|architect\b).*',
+    "Data Analyst" : 'analyst|analysis|analytics|specialist',
+    "Consultant" : 'consult|advisor',
+    "Researcher" : "research\w*",
+    "Big Data Developer & Administrator" : 'big data'
+       }
+   for k, val in title.items(): 
+      val = re.compile(val)
+      result = re.search(val,x.lower())
+      if result is not None: 
+          return k
+   else:
+       return 'Data Scientist' 
+        
+data['title_v3'] = data['title_v2'].apply(to_title) 
+
+
+
 
 #read new dataset
 data.to_csv('dsjob_wrangle.csv',index=False)

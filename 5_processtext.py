@@ -13,14 +13,35 @@ from dependency import *
 from cleantext import * 
 
 data = pd.read_csv("datafull.csv")
+data['industry_v2'] = data['industry_v2'].map(lambda x: ast.literal_eval(x) if x!= "Not Applicable" else [x])
 
-# Replace null value with Not Applicable 
 data.fillna('Not Applicable',inplace=True)
+
 
 # Delete duplicated entries with dulicated company & description 
 
-idx = data[data.duplicated(subset=['company','description_v2'])].index #in case of no dups, index is null 
+idx = data[data.duplicated(subset=['company','description_v2'])].index 
 data = data.drop(idx,axis=0).reset_index()
+
+
+
+
+# Create subset for Tableau visualization
+data[['list_time','title_v3','country','area','exp_level_v2','job_type_v2']].to_excel("vizda.xlsx",index=False)
+
+
+# Expand INDUSTRY
+
+col = list(data.industry_v2)
+col = pd.Series(chain(*col))
+len(col)
+
+
+
+
+
+
+# Derive MIN_EXP, MIN_DEGREE, STUDY_AREA, TECHNICAL 
 
 # Convert to Raw text 
 data['raw_desc'] = data['description_v2'].apply(remove_html)
@@ -59,49 +80,6 @@ data[data['exp_year']=='20161-2']['raw_desc']
 
 
 data.raw_desc[9610]
-
-
-# Categorize title 
-
-def to_title(x):
-   global title 
-   title = {
-    "Machine Learning Engineer" : 'machine learning|nlp|natural language processing|recognition|image|computer vision',
-    "Software Engineer" : r'(?=.*\bsoftware\b)(?=.*\bsengineer\b).*',    
-    "Data Scientist" : r'(?=.*\bdata|\b)(?=.*\bscien\w*\b).*',
-    "Data Engineer" : r'(?=.*\bdata|\b)(?=.*\bengineer|architect\b).*',
-    "Analyst" : 'analyst|analysis|analytics|specialist',
-    "Consultant" : 'consult|advisor',
-    "Researcher" : "research\w*",
-    "Big Data Developer" : r'(?=.*\bbig data|\b)(?=.*\bdevelop|program\w*\b).*',
-    "Big Data Administrator" : r'(?=.*\bbig data|\b)(?=.*\badmin\w*\b).*',
-    "Big Data Practitioner" : 'big data'   
-       }
-   for k, val in title.items(): 
-      val = re.compile(val)
-      result = re.search(val,x.lower())
-      if result is not None: 
-          return k
-   if 'big data' in x.lower():
-       return 'Big Data Practitioner'
-   else:
-       return 'Others' 
-        
-data['title_v3'] = data['title_v2'].apply(to_title) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -144,15 +122,8 @@ for sheet in ('title_v3','country','exp_level_v2','job_type_v2'):
         finaldf.to_excel(writer,sheet_name=sheet)
 
 
-# Word count 
 
-data = pd.read_excel('desc_text.xlsx',sheet_name = 0,index_col=0)
-
-
-data.loc['Data Scientist']
-
-
-
+# Multi-valued attribute 
 
 
 
