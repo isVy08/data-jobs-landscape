@@ -130,8 +130,9 @@ def to_title(x):
    global title 
    title = {
     "Machine Learning Engineer" : 'machine learning|nlp|natural language processing|recognition|image|computer vision',
-    "Software Engineer" : r'(?=.*\bsoftware\b)(?=.*\bsengineer\b).*',    
-    "Data Engineer" : r'(?=.*\bdata|\b)(?=.*\bengineer|architect\b).*',
+    "Data Engineer" : r'(?=.*\bdata\b)(?=.*\bengineer\b).*',
+    "Data Architect" : 'architect',
+    "Software Engineer" : r'(?=.*\bsoftware\b)(?=.*\bengineer\b).*', 
     "Data Analyst" : 'analyst|analysis|analytics|specialist',
     "Consultant" : 'consult|advisor',
     "Researcher" : "research\w*",
@@ -142,13 +143,15 @@ def to_title(x):
       result = re.search(val,x.lower())
       if result is not None: 
           return k
+          break 
    else:
        return 'Data Scientist' 
         
 data['title_v3'] = data['title_v2'].apply(to_title) 
-
+data['title_v3'] = data['title_v3'].map(lambda x: 'Data Engineer' if x == 'Data Architect' else x)
 
 
 
 #read new dataset
 data.to_csv('dsjob_wrangle.csv',index=False)
+

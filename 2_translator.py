@@ -13,7 +13,7 @@ pd.set_option('display.max_rows',500)
 
 
 #1. READ DATASET
-data = pd.read_csv('dsjob_final.csv',converters={'industry_v2': ast.literal_eval,'job_func_v2': ast.literal_eval})
+data = pd.read_csv('/Users/vyvo/Documents/GitHub/LinkedIn_dsjob/data/dsjob_final.csv',converters={'industry_v2': ast.literal_eval,'job_func_v2': ast.literal_eval})
 
 #----------------------------------------------------------------------
 
@@ -65,6 +65,8 @@ def to_area(x):
   
 loc = loc.map(lambda x: x[-1])   
 data['area'] = loc.apply(to_area)
+
+
 #-----------------------------------------------------------------------------
 
 # 4. TRANSLATE TEXT ATTRIBUTE: JOB FUNC / INDUSTRY / EXP LEVEL / JOB TYPE / JOB DESCRIPTION / TITLE
