@@ -44,7 +44,7 @@ choice = function(attr,gword,tool,maxword=300) {
   }
 }
   
-choice("e",gword,tool,maxword=25)
+choice("t",gword,tool,maxword=20)
 
 
 
