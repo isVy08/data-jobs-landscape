@@ -1,8 +1,8 @@
 # About this project 
 As a wanna-be Data Scientist, many time I find myself drowning in an endless pool of stuff I am expected to have a hang of to be qualified to become one. And, my periodic existential crisis in which I cannot help from wondering what I am doing with my life and why I never seem good enough, definitely bolsters things up. So, I decided to crawl data on job postings for Data Scientist role on LinkedIn to understand what a Data Scientist is actually expected to do and what it takes to become one. I could have just googled and found tons of articles. Well it occurs to me that the writers were either not serious about it (they just wanted good SEO) or trying to prove why I suck! 
 
-# What's interesting about this project (at least to me) 
-- I scraped data from public Linkedn job search page. No need to Login!  
+# What's interesting about this project
+- Data scraped from public Linkedn job search page. No need to Login!  
 - The whole data is textual 
 - Some job postings are in foreign languages as I also scraped jobs from non-English speaking countries 
 - Play around Python NLTK packages and Word cloud visualization 
@@ -25,6 +25,14 @@ Codes to perform major steps of the data preparation process
 6. Data: raw dataset, clean & full-stack dataset, keywords
 
 Still don't understand what I am doing? Read my report please. 
+
+# What's in the report
+1. Where is the demand for Data Scientist the highest?
+2. What is a typical Data Scientist expected to do?
+3. What skills and qualifications are required for Data Scientist?
+4. How is job description for this role different among experience levels?
+5. How is job description for Data Scientist different from those for Data Analyst, Data Engineer
+and Machine Learning Engineer?
 
 # What's next 
 - Develop Hero classifier 
