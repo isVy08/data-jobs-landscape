@@ -2,9 +2,6 @@ from dependency import *
 tokenizer = ToktokTokenizer()
 
 
-
-
-
 def remove_accented_chars(text):
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8', 'ignore')
     return text
@@ -47,13 +44,4 @@ def lemmatize_text(text):
     return filtered_text 
     
 
-
-#Translate to English using Google API (but with Limit!)   
-def to_eng(x):
-    trans = Translator()
-    try: 
-        return(trans.translate(x,dest='en').text)
-    except:
-        return(np.nan)
-    
 
