@@ -10,7 +10,7 @@ As a wanna-be Data Scientist, many time I find myself drowning in an endless poo
 # What I did 
 1. Scrape and collect data 
 2. Wrange and clean text (the whole data is textual) 
-3. Explore the data by create static visualizations (mostly word cloud) 
+3. Explore the data through static visualizations (mostly word cloud) 
 4. Write up an analysis report 
 
 # What's in this repo  
