@@ -2,6 +2,7 @@ import ast
 import time
 import pandas as pd 
 import numpy as np 
+import scipy
 #import pycountry as pcy
 from itertools import chain
 
@@ -21,3 +22,4 @@ from nltk.stem import WordNetLemmatizer
 # Adjust display settings 
 pd.set_option('display.max_columns',100)
 pd.set_option('display.max_rows',500)
+
