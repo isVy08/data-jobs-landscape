@@ -2,7 +2,7 @@ import ast
 import time
 import pandas as pd 
 import numpy as np 
-import pycountry as pcy
+#import pycountry as pcy
 from itertools import chain
 
 # Webdriver & HTML parsing 
