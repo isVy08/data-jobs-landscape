@@ -42,7 +42,7 @@ def labeling(title):
 # Naive Bayes Classifier 
 
 # prepare train and predict data 
-def prepare():
+
     df = pd.read_csv('clean_data.csv')
     data = df.loc[(df.job_responsibility=='0')|(df.job_requirement=='0'),
                   ['description_v2','job_responsibility','job_requirement']]
