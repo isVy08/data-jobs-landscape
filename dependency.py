@@ -26,11 +26,16 @@ from gensim.models.callbacks import CallbackAny2Vec
 
 
 # Classifier
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.feature_extraction.text import CountVectorizer
+
+# visualize embeddings
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt 
 
 # Adjust display settings 
 pd.set_option('display.max_columns',100)
 pd.set_option('display.max_rows',500)
-
