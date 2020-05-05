@@ -31,12 +31,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics import plot_confusion_matrix
+from sklearn import preprocessing
 
 # visualize embeddings
 from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt 
 
 # Adjust display settings 
-pd.set_option('display.max_columns',100)
+pd.set_option('display.max_columns',500)
 pd.set_option('display.max_rows',500)
+pd.set_option('display.max_colwidth',1000)
