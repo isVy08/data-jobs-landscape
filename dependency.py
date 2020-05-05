@@ -3,6 +3,7 @@ import time
 import pandas as pd 
 import numpy as np 
 import scipy
+import os
 #import pycountry as pcy
 from itertools import chain
 
