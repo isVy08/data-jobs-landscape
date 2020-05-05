@@ -79,17 +79,12 @@ def prepare(): # create train and predict data
     df.reset_index(inplace=True) 
     df['label'] = df['clean_description'].map(lambda x: labeling(x[0].get_text()) if isinstance(x,list) else 3)
     df['text'] = df['clean_description'].apply(to_text)
-    df = df.loc[df.text!= '',:] # remove null text   
     df = df.reset_index(drop=True)
-    df = df.rename(columns={'index':'id'})
-    
+    df = df.rename(columns={'index':'id'})  
     train = df.loc[df.label<3,['id','text','label']]
     df.to_csv('label_data.csv',index=False)
     train.to_csv('train_data.csv',index=False)
 
-
-data['new_text']  = data.groupby(['id','label'])['text'].transform(lambda x: ' '.join(x))
-a = data.drop_duplicates('new_text')
 
 # Naive Bayes Classifier 
 
@@ -101,9 +96,12 @@ def vectorize(input_data):
     return X
 
 data = pd.read_csv('label_data.csv')
+
+# clean data
 data.dropna(inplace=True)
 data.reset_index(drop=True,inplace=True)
 data['text'] = data['text'].map(lambda x: quick_clean_text(x,remove_digits=False))
+
 X = vectorize(data.text)    
 
 train = data[data.label<3]

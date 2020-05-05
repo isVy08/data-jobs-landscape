@@ -10,8 +10,8 @@ from itertools import chain
 # Webdriver & HTML parsing 
 import requests
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+#from selenium import webdriver
+#from selenium.webdriver.common.keys import Keys
 
 # NLP
 import re
