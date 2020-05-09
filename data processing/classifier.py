@@ -79,45 +79,30 @@ def prepare(): # create train and predict data
     df.reset_index(inplace=True) 
     df['label'] = df['clean_description'].map(lambda x: labeling(x[0].get_text()) if isinstance(x,list) else 3)
     df['text'] = df['clean_description'].apply(to_text)
+    df['text'] = df
+    
+    
     df = df.reset_index(drop=True)
     df = df.rename(columns={'index':'id'})  
+    
+# check job requirement 
+    tech = pd.read_csv('/Users/vyvo/R/word cloud/technical.csv')
+    tech.drop([0,2,15],inplace=True) # remove python, r sql 
+    p = "r'"+('|'.join(tech['tools'].append(pd.Series(['bachelor','master','phd','degree','mathematic','computer science','statistic','experience','skill']),ignore_index=True)))
+    
+    t = other[220]
+    re.search(p,t)   
+    
+    other = df.loc[df.label == 2,'text']
+    rq = other[other.str.contains(p)]
+    
+    p2 = r'work with|working with.*'
+    rs = other[other.str.contains(p2)]
+    
+    
+    other.to_csv('other_data.csv')
+    
     train = df.loc[df.label<3,['id','text','label']]
     df.to_csv('label_data.csv',index=False)
     train.to_csv('train_data.csv',index=False)
-
-
-# Naive Bayes Classifier 
-
-
-def vectorize(input_data):
-    vectorizer = CountVectorizer()
-    X = vectorizer.fit_transform(input_data)
-    X = X.toarray()
-    return X
-
-data = pd.read_csv('label_data.csv')
-
-# clean data
-data.dropna(inplace=True)
-data.reset_index(drop=True,inplace=True)
-data['text'] = data['text'].map(lambda x: quick_clean_text(x,remove_digits=False))
-
-X = vectorize(data.text)    
-
-train = data[data.label<3]
-train_input = X[train.index]
-
-predict = data[data.label==3]
-predict_input = X[predict.index]
-
-    
-
-def nb():
-    X_train, X_test, y_train, y_test = train_test_split(train_input, train.label, test_size=0.3, random_state=18,stratify=train.label)
-    clf = MultinomialNB().fit(X_train,y_train)
-    y_pred = clf.predict(X_test)
-    y_prob = clf.predict_proba(X_test)
-    return clf, accuracy_score(y_test, y_pred)
-
-model, accuracy = nb()
 
