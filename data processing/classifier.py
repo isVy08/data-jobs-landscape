@@ -77,30 +77,31 @@ def prepare(): # create train and predict data
     
     df.dropna(inplace=True)
     df.reset_index(inplace=True) 
+    df = df.rename(columns={'index':'id'})  
     df['label'] = df['clean_description'].map(lambda x: labeling(x[0].get_text()) if isinstance(x,list) else 3)
     df['text'] = df['clean_description'].apply(to_text)
-    df['text'] = df
     
+
+
+   
     
-    df = df.reset_index(drop=True)
-    df = df.rename(columns={'index':'id'})  
-    
-# check job requirement 
+    # check job requirement 
     tech = pd.read_csv('/Users/vyvo/R/word cloud/technical.csv')
     tech.drop([0,2,15],inplace=True) # remove python, r sql 
-    p = "r'"+('|'.join(tech['tools'].append(pd.Series(['bachelor','master','phd','degree','mathematic','computer science','statistic','experience','skill']),ignore_index=True)))
+    p = "r'"+('|'.join(tech['tools'].append(pd.Series(['bachelor','master','phd','degree','mathematic','computer science','statistic','knowledge']),ignore_index=True)))
     
-    t = other[220]
-    re.search(p,t)   
+    others = df.loc[df.label == 2,'text']
+    rq = others[others.str.contains(p)].index
     
-    other = df.loc[df.label == 2,'text']
-    rq = other[other.str.contains(p)]
+    # update label to 1
+    df.iloc[rq,3] = 1
     
+    # check job responsibility
+    others = df.loc[df.label == 2,'text']
     p2 = r'work with|working with.*'
-    rs = other[other.str.contains(p2)]
+    rs = others[others.str.contains(p2)].index
+    df.iloc[rs,3] = 0 # update label to 0
     
-    
-    other.to_csv('other_data.csv')
     
     train = df.loc[df.label<3,['id','text','label']]
     df.to_csv('label_data.csv',index=False)
