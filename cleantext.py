@@ -43,9 +43,14 @@ def lemmatize_text(text):
     filtered_text = ' '.join(filtered_tokens)
     return filtered_text 
     
-def quick_clean_text(text,remove_digits=True): 
-    text = remove_special_characters(text,remove_digits)
-    text = remove_stopwords(text)
-    text = lemmatize_text(text)
+def quick_clean_text(text,specchar=1, stopword=1, html=1, lemmatize=1): 
+    if specchar == 1: 
+        text = remove_special_characters(text,remove_digits=False)
+    if stopword == 1:
+        text = remove_stopwords(text)
+    if html == 1:
+        text = remove_html(text)
+    if lemmatize == 1:
+        text = lemmatize_text(text)
     return text 
 
