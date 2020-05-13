@@ -1,5 +1,6 @@
 from dependency import * 
 tokenizer = ToktokTokenizer()
+nltk.download('averaged_perceptron_tagger')
 
 
 def remove_accented_chars(text):
@@ -7,8 +8,8 @@ def remove_accented_chars(text):
     return text
 
 def remove_special_characters(text, remove_digits=False):
-    pattern = r'[^a-zA-z0-9\s]' if not remove_digits else r'[^a-zA-z\s]'
-    text = re.sub(pattern, ' ', text)
+    pattern = re.compile('[^a-zA-z0-9.\s]') if not remove_digits else r'[^a-zA-z\s]'
+    text = re.sub(pattern, '', text)
     return text
 
 
@@ -31,25 +32,25 @@ def remove_stopwords(text, is_lower_case=False,return_str=True):
 
 def remove_html(text):
     parse = BeautifulSoup(text,'lxml')
-    return parse.get_text().lower()
+    return parse.get_text(' ').lower()
 
 
 nltk.download('wordnet')
-def lemmatize_text(text): 
+def lemmatize_text(text,pos='n'): 
     w = WordNetLemmatizer()
-    tokens = tokenizer.tokenize(text)
+    tokens = tokenizer.tokenize(t)
     tokens = [token.strip() for token in tokens] #remove space
-    filtered_tokens = [w.lemmatize(token) for token in tokens ]
+    filtered_tokens = [w.lemmatize(token,pos) for token in tokens ]
     filtered_text = ' '.join(filtered_tokens)
     return filtered_text 
     
-def quick_clean_text(text,specchar=1, stopword=1, html=1, lemmatize=1): 
+def quick_clean_text(text,html=1, specchar=1, stopword=1,lemmatize=1): 
+    if html == 1:
+        text = remove_html(text)
     if specchar == 1: 
         text = remove_special_characters(text,remove_digits=False)
     if stopword == 1:
         text = remove_stopwords(text)
-    if html == 1:
-        text = remove_html(text)
     if lemmatize == 1:
         text = lemmatize_text(text)
     return text 
