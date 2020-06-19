@@ -1,0 +1,12 @@
+name: shiny
+title: shiny
+username:
+account: isvy08
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2475816
+bundleId: 3290067
+url: https://isvy08.shinyapps.io/shiny/
+when: 1592532034.25882
+asMultiple: FALSE
+asStatic: FALSE

@@ -142,8 +142,8 @@ server = function(input, output) {
   # PART 1A: JOB DUTIES / WORD TREE
   output$wordtree = gwordtree::renderGwordtree({
     col = paste(gsub(' ','.',input$title),'.',gsub(' ','.',input$explevel),sep='')
-    
-    if (length(input$explevel)<2) { 
+
+    if (length(input$explevel)<2) {
       d = as.vector(data1[,col])
     }
     else {
@@ -397,6 +397,3 @@ server = function(input, output) {
   
   
 }
-
-# run on browser to maximize experience
-runApp(list(ui = ui, server = server), launch.browser = TRUE)
