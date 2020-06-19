@@ -1,0 +1,7 @@
+title,skill,industry,jobs,need_degree,degree,need_experience,experience,country
+Data Scientist,"Python, R, SQL, Math, Statistics",Financial Services and Marketing and Advertising,5041,45.30%,Master,44.90%,4,Netherlands and United States
+Data Analyst,"SQL, Excel, Python, Visual, R",Financial Services and Staffing and Recruiting,3619,31.10%,Bachelor,45.20%,3,United Kingdom and South Africa
+Consultant,"Python, R, Excel, SQL, Math",Management Consulting and Financial Services,256,38.70%,Master,51.60%,4,France and Netherlands
+Big Data Developer,"Spark, Hadoop, Scala, Java, SQL",Financial Services and Human Resources,391,22.30%,Bachelor,51.90%,4,Spain and Canada
+Machine Learning Engineer,"Python, R, Computer science, Math, Statistics",Financial Services and Marketing and Advertising,296,38.20%,Master,44.60%,4,India and Germany
+Data Engineer,"Python, SQL, Spark, Hadoop, Computer science",Financial Services and Marketing and Advertising,765,34.60%,Bachelor,45.40%,4,Singapore and Netherlands

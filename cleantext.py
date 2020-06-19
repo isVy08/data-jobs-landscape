@@ -38,7 +38,7 @@ def remove_html(text):
 nltk.download('wordnet')
 def lemmatize_text(text,pos='n'): 
     w = WordNetLemmatizer()
-    tokens = tokenizer.tokenize(t)
+    tokens = tokenizer.tokenize(text)
     tokens = [token.strip() for token in tokens] #remove space
     filtered_tokens = [w.lemmatize(token,pos) for token in tokens ]
     filtered_text = ' '.join(filtered_tokens)
@@ -48,7 +48,7 @@ def quick_clean_text(text,html=1, specchar=1, stopword=1,lemmatize=1):
     if html == 1:
         text = remove_html(text)
     if specchar == 1: 
-        text = remove_special_characters(text,remove_digits=False)
+        text = remove_special_characters(text,remove_digits=True)
     if stopword == 1:
         text = remove_stopwords(text)
     if lemmatize == 1:
