@@ -37,5 +37,7 @@ and Machine Learning Engineer?
 # What's next 
 - Develop Hero classifier 
 - Build interactive visualizations (To view the viz, open your R console and run the following code)
+```
 runGitHub("LinkedIn_dsjob", "isVy08", subdir = "Shiny/")
+```
 
