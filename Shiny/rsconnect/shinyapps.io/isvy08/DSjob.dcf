@@ -1,0 +1,12 @@
+name: DSjob
+title: DSjob
+username:
+account: isvy08
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2475886
+bundleId: 3290115
+url: https://isvy08.shinyapps.io/DSjob/
+when: 1592533162.15948
+asMultiple: FALSE
+asStatic: FALSE
