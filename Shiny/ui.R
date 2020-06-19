@@ -1,4 +1,6 @@
 data4 = read.csv('data4.csv')
+data3 = read.csv('data3.csv')
+
 
 # Intialize user options
 position = levels(data4$title_v3) # data position
