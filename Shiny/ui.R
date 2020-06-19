@@ -37,11 +37,12 @@ shinyUI(fluidPage(
     br(),
     fluidRow(
     column(3,selectInput(inputId = "title",label = "Select desired position",
-                         choices = position,
+                         choices = c("Big Data Developer","Consultant","Data Analyst","Data Engineer",
+                                     "Data Scientist","Machine Learning Engineer"),
                          selected = "Data Scientist",
                          multiple = FALSE), offset = 3),
     column(4,checkboxGroupInput(inputId = "explevel", label = "Select experience level",
-                                choices = exp_level,
+                                choices = c("Entry level","Associate","Senior"),
                                 selected = 'Entry level',inline = TRUE))
   ),
 
@@ -67,7 +68,10 @@ shinyUI(fluidPage(
     tabPanel("Job Postings", icon = icon('briefcase'),
                tags$br(),
                wellPanel(selectInput(inputId = "country", label = "Select countries",
-                                  choices = country,
+                                  choices = c("Australia","Canada","China","France","Germany",
+                                              "India","Italy","Japan","Netherlands","Singapore",
+                                              "South Africa","Spain","Sweden","Switzerland",
+                                              "United Kingdom","United States"),
                                   selected = "Australia",multiple = TRUE),
                          style = 'width:80%; background-color:white; border-color:white'),
                tags$br(),
@@ -102,7 +106,7 @@ shinyUI(fluidPage(
              h3('Potential Industries for Job Opportunities',style='font-size:22px;font-weight:bold'),
              helpText('Brush over an area to zoom in on the bars',style='font-size:14px;font-style:italic'),
              sliderInput(inputId = 'maxind',label = 'Show top industries',
-                         min = 20, max = length(unique(data3$industry_v2)), value = 5, step = 1),
+                         min = 20, max = 123, value = 5, step = 1),
              plotlyOutput('bar')
     ),
     type = "pills"),
