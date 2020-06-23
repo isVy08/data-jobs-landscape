@@ -36,7 +36,23 @@ and Machine Learning Engineer?
 
 # What's next 
 - Develop Hero classifier 
-- Build interactive visualizations (To view the viz, open your R console and run the following code)
+- Build interactive visualizations (see below)
+
+# About my interactive viz
+Dependencies
+```
+shiny
+googleVis
+gwordtree
+devtools::install_github("czxa/gwordtree")
+wordcloud
+RColorBrewer
+ggplot2
+plotly
+r2d3
+```
+To view the viz, open your R console and run
+
 ```
 runGitHub("LinkedIn_dsjob", "isVy08", subdir = "Shiny/")
 ```
