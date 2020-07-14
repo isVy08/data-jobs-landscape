@@ -20,7 +20,9 @@ Codes to perform major steps of the data preparation process
 3. Translator: Translate data to English using Google Translate website 
 4. Cleantext: Commonly used text cleaning functions 
 5. Classifier: Job descriptions contain different kinds of information, besides Job Responsibilities and Requirements. I only need to extract and analyze those two pieces of information separately. So, I want to design a small algorithm to do this. 
-- Naive version (Done): I classifiy a block of text based on keywords in its heading 
+- Naive version: I classifiy a corpus of description based on keywords in its heading 
+- Hero version: I classify text based on Naive Bayes and Logistics Regression. 
+Logistics Regression shows to be overfitting on the predicted set. 
 6. Data: raw dataset, clean dataset (with all attributes), keywords (for classifier)
 
 Still don't understand what I am doing? Read my report please. 
@@ -33,13 +35,9 @@ Still don't understand what I am doing? Read my report please.
 5. How is job description for Data Scientist different from those for Data Analyst, Data Engineer
 and Machine Learning Engineer?
 
-# What's next 
-<<<<<<< HEAD
-- Build interactive visualizations (Done)
-=======
-- Build interactive visualizations (see below)
-
 # About my interactive viz
+I build a Shiny-based interactive visualization. To view the viz, open your R console and run the following code
+
 Dependencies
 ```
 shiny
@@ -52,7 +50,6 @@ ggplot2
 plotly
 r2d3
 ```
-To view the viz, open your R console and run the following code
 
 ```
 runGitHub("LinkedIn_dsjob", "isVy08", subdir = "Shiny/")
