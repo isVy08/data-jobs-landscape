@@ -49,7 +49,7 @@ ggplot2
 plotly
 r2d3
 ```
-To view the viz, open your R console and run
+To view the viz, open your R console and run the following code
 
 ```
 runGitHub("LinkedIn_dsjob", "isVy08", subdir = "Shiny/")
