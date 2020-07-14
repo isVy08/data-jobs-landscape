@@ -21,7 +21,6 @@ Codes to perform major steps of the data preparation process
 4. Cleantext: Commonly used text cleaning functions 
 5. Classifier: Job descriptions contain different kinds of information, besides Job Responsibilities and Requirements. I only need to extract and analyze those two pieces of information separately. So, I want to design a small algorithm to do this. 
 - Naive version (Done): I classifiy a block of text based on keywords in its heading 
-- Hero version: Advanced ML text classification model 
 6. Data: raw dataset, clean dataset (with all attributes), keywords (for classifier)
 
 Still don't understand what I am doing? Read my report please. 
@@ -35,6 +34,5 @@ Still don't understand what I am doing? Read my report please.
 and Machine Learning Engineer?
 
 # What's next 
-- Develop Hero classifier 
 - Build interactive visualizations (Done)
 
