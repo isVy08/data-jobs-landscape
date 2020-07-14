@@ -34,5 +34,27 @@ Still don't understand what I am doing? Read my report please.
 and Machine Learning Engineer?
 
 # What's next 
+<<<<<<< HEAD
 - Build interactive visualizations (Done)
+=======
+- Build interactive visualizations (see below)
+
+# About my interactive viz
+Dependencies
+```
+shiny
+googleVis
+gwordtree
+devtools::install_github("czxa/gwordtree")
+wordcloud
+RColorBrewer
+ggplot2
+plotly
+r2d3
+```
+To view the viz, open your R console and run the following code
+
+```
+runGitHub("LinkedIn_dsjob", "isVy08", subdir = "Shiny/")
+```
 
