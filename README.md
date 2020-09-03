@@ -1,5 +1,5 @@
 # About this project 
-As a wanna-be Data Scientist, many time I find myself drowning in an endless pool of knowledge. And, my periodic existential crisis in which I cannot help from wondering what I am doing with my life and why I never seem good enough, definitely bolsters things up. So, I decided to crawl data on job postings for Data Scientist role on LinkedIn to understand what a Data Scientist is actually expected to do and what it takes to become one. I could have just googled and found tons of articles. Well it occurs to me that the writers were either not serious about it (they just wanted good SEO) or trying to prove why I suck! 
+As a wanna-be Data Scientist, many time I find myself drowning in an endless pool of knowledge. And, my periodic existential crisis in which I cannot help from wondering what I am doing with my life and why I never seem good enough, definitely bolsters things up. So, I decided to crawl data on job postings for Data Scientist role on LinkedIn to understand what a Data Scientist is actually expected to do and what it takes to become one. 
 
 # What's interesting about this project
 - Data scraped from public Linkedn job search page. No need to Login!  
