@@ -52,6 +52,6 @@ r2d3
 ```
 
 ```
-runGitHub("LinkedIn_dsjob", "isVy08", subdir = "Shiny/")
+runGitHub("data-jobs-landscape", "isVy08", subdir = "Shiny/")
 ```
 
