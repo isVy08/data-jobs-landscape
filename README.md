@@ -42,7 +42,8 @@ runGitHub("data-jobs-landscape", "isVy08", subdir = "Shiny/")
 
 # What's in the report
 
-Only interested in the findings. Feel free to skip the codes and head straight to my blog at <Insert Link>  
+Only interested in the findings. Feel free to skip the codes and head straight to my blog at
+https://isvy08.github.io/DS/data-job-landscape.html
 
 It contains useful information on 
   
