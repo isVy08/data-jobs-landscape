@@ -19,13 +19,9 @@ Codes to perform major steps of the data preparation process
 2. Scraper
 3. Translator: Translate data to English using Google Translate website 
 4. Cleantext: Commonly used text cleaning functions 
-5. Classifier: Job descriptions contain different kinds of information, besides Job Responsibilities and Requirements. I only need to extract and analyze those two pieces of information separately. So, I want to design a small algorithm to do this. 
-- Naive version: I classifiy a corpus of description based on keywords in its heading 
-- Hero version: I classify text based on Naive Bayes and Logistics Regression. 
-Logistics Regression shows to be overfitting on the predicted set. 
-6. Data: raw dataset, clean dataset (with all attributes), keywords (for classifier)
+5. Data: raw dataset, clean dataset (with all attributes), keywords (for classifier)
 
-Still don't understand what I am doing? Read my report please. 
+Still don't understand what I am doing? Check my report out
 
 # What's in the report
 1. Where is the demand for Data Scientist the highest?
