@@ -1,29 +1,51 @@
 # About this project 
-As a wanna-be Data Scientist, many time I find myself drowning in an endless pool of knowledge. And, my periodic existential crisis in which I cannot help from wondering what I am doing with my life and why I never seem good enough, definitely bolsters things up. So, I decided to crawl data on job postings for Data Scientist role on LinkedIn to understand what a Data Scientist is actually expected to do and what it takes to become one. 
-
-# What's interesting about this project
-- Data scraped from public Linkedn job search page. No need to Login!  
-- The whole data is textual 
-- Some job postings are in foreign languages as I also scraped jobs from non-English speaking countries 
-- Play around Python NLTK packages and Word cloud visualization 
+Wanna break into Data industry but don't know where to begin? Check out my data analysis on what the world of "Data Analytics" is all about. 
 
 # What I did 
-1. Scrape and collect data 
-2. Wrange and clean text (the whole data is textual) 
-3. Explore the data through both static and interactive visualizations
-4. Write up an analysis report 
+1. Scraping and collecting 10,000 + data job postings on LinkedIn - worldwide and multilingual !   
+2. Various pre-processing steps for textual data, including language translation  
+3. Visualizing data statically and interactively
+4. Writing up a detailed report 
 
 # What's in this repo  
-Codes to perform major steps of the data preparation process 
-1. Dependency 
-2. Scraper
-3. Translator: Translate data to English using Google Translate website 
-4. Cleantext: Commonly used text cleaning functions 
-5. Data: raw dataset, clean dataset (with all attributes), keywords (for classifier)
+I used `Python` for data processing and `R` for visualization
 
-Still don't understand what I am doing? Check my report out
+**py-processor**
+1. `cleantext`: text cleaning snippets 
+2. `scraper`: web driver to automatically crawl data on LinkedIn public domain. No need to login !
+3. `translator`: web driver to automatically translate data to English using Google Translate 
+4. `reqs_keywords.csv`, `resp_keywords.csv`: keywords to filter out sections on Job requirements and Job responsibilities 
+
+**Shiny**
+
+My interactive viz built upon `Shiny (R)` and `D3 (JavaScript)`
+
+To view the viz on local host, an easy way is to 
+(1) open your R console
+(2) load `Shiny` directory
+(3) run the following code
+
+```
+devtools::install_github("czxa/gwordtree")
+
+packages = c("shiny","googleVis", "gwordtree", "wordcloud", "RColorBrewer", "ggplot2","plotly","r2d3")
+lapply(packages, require, character.only = TRUE)
+
+runApp()
+```
+
+Another way to run directly from GitHub, but make sure your R version is compatible. 
+```
+runGitHub("data-jobs-landscape", "isVy08", subdir = "Shiny/")
+```
+
 
 # What's in the report
+
+Only interested in the findings. Feel free to skip the codes and head straight to my blog at <Insert Link>  
+
+It contains useful information on 
+  
 1. Where is the demand for Data Scientist the highest?
 2. What is a typical Data Scientist expected to do?
 3. What skills and qualifications are required for Data Scientist?
@@ -31,23 +53,7 @@ Still don't understand what I am doing? Check my report out
 5. How is job description for Data Scientist different from those for Data Analyst, Data Engineer
 and Machine Learning Engineer?
 
-# About my interactive viz
-I build a Shiny-based interactive visualization. To view the viz, open your R console and run the following code
 
-Dependencies
-```
-shiny
-googleVis
-gwordtree
-devtools::install_github("czxa/gwordtree")
-wordcloud
-RColorBrewer
-ggplot2
-plotly
-r2d3
-```
 
-```
-runGitHub("data-jobs-landscape", "isVy08", subdir = "Shiny/")
-```
+
 
