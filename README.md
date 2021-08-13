@@ -43,7 +43,7 @@ runGitHub("data-jobs-landscape", "isVy08", subdir = "Shiny/")
 # What's in the report
 
 Only interested in the findings? Feel free to skip the codes and head straight to my article
-<a href="https://isvy08.github.io/DS/data-job-landscape.html">What does a Data Scientist do?</a>
+<a href="https://isvy08.github.io/blog/data-job-landscape.html">What does a Data Scientist do?</a>
 
 It contains useful information on 
   
